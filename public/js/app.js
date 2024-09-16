@@ -7,12 +7,6 @@ function fetchData() {
     .then((response) => response.json())
     .then((data) => {
       if (Array.isArray(data.selectedCoin) && data.selectedCoin.length > 0) {
-        const mainPrice = data.selectedCoin[0].last;
-
-        document.getElementById(
-          "main-price"
-        ).textContent = `${mainPrice.toLocaleString()}`;
-
         populateTable(data.selectedCoin);
       } else {
         console.error("No valid data found in selectedCoin");
@@ -24,6 +18,10 @@ function fetchData() {
 
 function populateTable(data) {
   const tableBody = document.getElementById("table-body");
+  const mainPrice = data[0].last;
+  document.getElementById(
+    "main-price"
+  ).textContent = `${mainPrice.toLocaleString()}`;
 
   tableBody.innerHTML = "";
 
