@@ -18,10 +18,6 @@ function fetchData() {
 
 function populateTable(data) {
   const tableBody = document.getElementById("table-body");
-  const mainPrice = data[0].last;
-  document.getElementById(
-    "main-price"
-  ).textContent = `${mainPrice.toLocaleString()}`;
 
   tableBody.innerHTML = "";
 
