@@ -1,10 +1,11 @@
 require("dotenv").config();
+
 document.addEventListener("DOMContentLoaded", function () {
   fetchData();
 });
 
 function fetchData() {
-  fetch(`${process.env.DOMAIN_URL}/dashboard/api/crypto-data`)
+  fetch(`https://quad-b-tech-backend-one.vercel.app/dashboard/api/crypto-data`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data.selectedCoin);
