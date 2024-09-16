@@ -8,20 +8,23 @@ const getCryptoData = async (req, res) => {
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
     try {
       data.forEach((item) => {
-        connection.query(query, [
-          item.base_unit,
-          item.quote_unit,
-          item.low,
-          item.high,
-          item.last,
-          item.type,
-          item.open,
-          item.volume,
-          item.sell,
-          item.buy,
-          item.timestamp,
-          item.name,
-        ]);
+        connection.query(
+          "CALL InsertCryptoData(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+          [
+            item.base_unit,
+            item.quote_unit,
+            item.low,
+            item.high,
+            item.last,
+            item.type,
+            item.open,
+            item.volume,
+            item.sell,
+            item.buy,
+            item.timestamp,
+            item.name,
+          ]
+        );
       });
     } catch (error) {
       console.log(error);
