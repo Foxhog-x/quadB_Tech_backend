@@ -34,6 +34,7 @@ const getCryptoData = async (req, res) => {
 
   const response = await axios.get("https://api.wazirx.com/api/v2/tickers");
   const cryptoCoin = response.data;
+  console.log(cryptoCoin);
   const selectedCoin = Object.values(cryptoCoin)
     .slice(0, 10)
     .map((script) => {
