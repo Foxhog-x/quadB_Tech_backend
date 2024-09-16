@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchData() {
-  fetch("https://quad-b-tech-backend-one.vercel.app//api/crypto-data")
+  fetch("https://quad-b-tech-backend-one.vercel.app/api/crypto-data")
     .then((response) => response.json())
     .then((data) => {
       if (data.selectedCoin.length > 0) {
