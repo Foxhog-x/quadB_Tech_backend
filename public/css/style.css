@@ -146,10 +146,9 @@ select{
   font-size: 24px;
   color: var(--main-text-color);
   text-align: center;
-   
-
- 
 }
+
+
 .crypto_price{
   display: flex;
   justify-content: space-evenly;
