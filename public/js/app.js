@@ -1,9 +1,10 @@
+require("dotenv").config();
 document.addEventListener("DOMContentLoaded", function () {
   fetchData();
 });
 
 function fetchData() {
-  fetch("http://localhost:8000/dashboard/api/crypto-data")
+  fetch(`${process.env.DOMAIN_URL}/dashboard/api/crypto-data`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data.selectedCoin);
