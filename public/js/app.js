@@ -3,18 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchData() {
-  fetch("https://quad-b-tech-backend-one.vercel.app/dashboard/api/crypto-data")
+  fetch("http://localhost:8000/dashboard/api/crypto-data")
     .then((response) => response.json())
     .then((data) => {
       if (data.selectedCoin.length > 0) {
-        const item = data.selectedCoin[0];
-        console.log(item);
-        const mainPriceHeading = document.querySelector(".main_price_heading");
-        if (mainPriceHeading) {
-          mainPriceHeading.innerHTML = `<span>₹ </span>${item.last.toLocaleString()}`;
-        }
-      } else {
-        console.error("No data received");
+        const mainPrice = data.selectedCoin[0].last;
+
+        document.getElementById("main-price").textContent =
+          mainPrice.toLocaleString();
       }
       populateTable(data.selectedCoin);
     })
