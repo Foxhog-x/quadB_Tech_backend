@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Static Site</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div>
+        <header>
+            <div>
+                <div class="heading">HODLINFO</div>
+            </div>
+            <div class="select_options">
+                <select name="currency" id="currency">
+                    <option value="inr">INR</option>
+                </select>
+                <select name="Crypto" id="crypto">
+                    <option value="btc">BTC</option>
+                </select>
+                <button class="buy_btn">Buy BTC</button>
+            </div>
+            <div class="header_right_side">
+                <div class="circle">
+                    <span class="number">57</span>
+                </div>
+                <button class="connect_btn"> <img src="./images/paper.png" alt="Icon" class="icon"> Connect
+                    Telegram</button>
+                <label class="switch">
+                    <input type="checkbox" id="switch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </header>
+        <div class="dashboard_price_section">
+            <h3 class="bestprice_heading">Best Price to Trade</h3>
+        </div>
+        <div class="crypto_price">
+            <div class="percentage">
+                <h3>0.1%</h3>
+                <span>5 Mins</span>
+            </div>
+            <div class="percentage">
+                <h3>0.96%</h3>
+                <span>1 Hour</span>
+            </div>
+            <div class="main_price">
+                <h1 class="main_price_heading"><span>$</span>26,56,110</h1>
+                <span class="main_price_text">Average BTC/INR net price including commission</span>
+            </div>
+            <div class="percentage">
+                <h3>0.1%</h3>
+                <span>1 Day</span>
+            </div>
+            <div class="percentage">
+                <h3>0.96%</h3>
+                <span>7 Days</span>
+            </div>
+        </div>
+        <div class="table_container">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Platform</th>
+                        <th>Last Traded Price</th>
+                        <th>Buy/Sell Price</th>
+                        <th>Difference</th>
+                        <th>Savings</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+            </table>
+        </div>
+        <footer>
+            <button class="holdinfo_button">Add holdinfo to home screen</button>
+        </footer>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+
+
+</html>
