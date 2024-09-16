@@ -28,16 +28,16 @@ function populateTable(data) {
 
     row.innerHTML = `
     <td>${index + 1}</td>
-    <td>${item.name}</td> <!-- Platform (e.g., "BAT/INR") -->
-    <td>${item.last}</td> <!-- Last Traded Price -->
-    <td>${item.buy} / ${item.sell}</td> <!-- Buy/Sell Price -->
+    <td>${item.name}</td>  
+    <td>₹${item.last}</td>  
+    <td>₹${item.buy} / ${item.sell}</td>  
     <td style="color: ${item.last > item.open ? "#28a745" : "#dc3545"}">
         <i class="fas fa-caret-${
           item.last > item.open ? "up" : "down"
         } icon_spacing"></i>
         ${priceDifference}
     </td>
-    <td>${item.volume}</td> <!-- Volume (as savings) -->
+    <td>₹${item.volume}</td>  
   `;
 
     tableBody.appendChild(row);
