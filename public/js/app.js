@@ -3,14 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchData() {
-  fetch("https://quad-b-tech-backend-one.vercel.app/api/crypto-data")
+  fetch("https://quad-b-tech-backend-one.vercel.app/dashboard/api/crypto-data")
     .then((response) => response.json())
     .then((data) => {
-      if (data.selectedCoin.length > 0) {
+      if (Array.isArray(data.selectedCoin) && data.selectedCoin.length > 0) {
         const mainPrice = data.selectedCoin[0].last;
 
-        document.getElementById("main-price").textContent =
-          mainPrice.toLocaleString();
+        document.getElementById(
+          "main-price"
+        ).textContent = `${mainPrice.toLocaleString()}`;
+
+        populateTable(data.selectedCoin);
+      } else {
+        console.error("No valid data found in selectedCoin");
       }
       populateTable(data.selectedCoin);
     })
@@ -18,7 +23,6 @@ function fetchData() {
 }
 
 function populateTable(data) {
-  console.log(data);
   const tableBody = document.getElementById("table-body");
 
   tableBody.innerHTML = "";
